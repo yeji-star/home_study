@@ -1,63 +1,36 @@
 package org.example;
 
+// 문제 : 문제 - 1부터 5까지의 합을 출력해주세요.
+//문제 - -100부터 25까지의 합을 출력해주세요.
 
+class Main4 {
+    public static void main(String[] args) {
 
-    // 문제 : 할인 대상인지 아닌지 출력해주세요.
-// 조건 : 나이가 19세 이하이거나 60세 이상이면 할인 대상입니다.
-// 조건 : 출력예시 처럼 출력되어야 합니다.
-// 조건 : `구현시작` 부분만 수정 할 수 있습니다.
-// 조건 : 4가지 이상의 방법으로 풀어야 합니다.
-// 조건 : 그 중 2가지 방법은 `&&, ||`없이 풀어야 합니다.
+        int i = 0;
+        int j = 1;
 
-    class Main4 {
-        public static void main(String[] args) {
-            int age = 11; // 이 값을 바꿔가면서 실행해보세요.
+        while (j <= 5) {
 
-            System.out.println("당신의 나이는 " + age + "살 입니다.");
+            // i = i + j; j++; i = i + j+1; -> 1 = 1 + (1+1);
+            i += j;
+            j++;
 
-            // 구현시작
-            System.out.println("== 정답 v1 ==");
-            if (19 >= age) {
-                System.out.println("할인 대상입니다.");
-            }
-
-            if (60 <= age) {
-                System.out.println("할인 대상입니다.");
-            }
-
-            if (20 <= age) {
-                if (60 > age) {
-                    System.out.println("할인 대상이 아닙니다.");
-                }
-            }
-
-
-                System.out.println("== 정답 v2 ==");
-                if (19 >= age || 60 <= age) {
-                    System.out.println("할인 대상입니다.");
-                } else {
-                    System.out.println("할인 대상이 아닙니다.");
-                }
-
-                System.out.println("== 정답 v3 ==");
-                if (20 <= age && 60 > age) {
-                    System.out.println("할인 대상이 아닙니다.");
-                } else {
-                    System.out.println("할인 대상입니다.");
-                }
-
-                System.out.println("== 정답 v4 ==");
-                if (19 >= age) {
-                    System.out.println("할인 대상입니다.");
-                } else if (60 <= age) {
-                    System.out.println("할인 대상입니다.");
-                } else {
-                    System.out.println("할인 대상이 아닙니다.");
-                }
-
-
-                // 출력 => 할인대상입니다. 또는 할인 대상이 아닙니다.
-            }
         }
+
+        System.out.println(i);
+
+        System.out.println("for문");
+
+        i = 0;
+
+        for (j = 1; j <= 5; j++) {
+            i += j;
+        }
+
+        System.out.println(i);
+
+
+    }
+}
 
 
