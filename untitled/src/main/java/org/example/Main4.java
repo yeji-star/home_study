@@ -1,36 +1,28 @@
 package org.example;
 
-// 문제 : 문제 - 1부터 5까지의 합을 출력해주세요.
-//문제 - -100부터 25까지의 합을 출력해주세요.
+// 문제 : 3개의 자동차가 각각 1번씩 달리게 해주세요.
 
 class Main4 {
     public static void main(String[] args) {
+        Carr a = new Carr();
+        a.name = "현대";
+        a.run();
 
-        int i = 0;
-        int j = 1;
+        Carr b = new Carr();
+        b.name = "기아";
+        b.run();
 
-        while (j <= 5) {
-
-            // i = i + j; j++; i = i + j+1; -> 1 = 1 + (1+1);
-            i += j;
-            j++;
-
-        }
-
-        System.out.println(i);
-
-        System.out.println("for문");
-
-        i = 0;
-
-        for (j = 1; j <= 5; j++) {
-            i += j;
-        }
-
-        System.out.println(i);
-
-
+        Carr c = new Carr();
+        c.name = "차주";
+        c.run();
     }
 }
 
+class Carr {
+    String name;
+    int speed;
 
+    void run() {
+        System.out.printf("%s 자동차가 달립니다.\n",this.name);
+    }
+}

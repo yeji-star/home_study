@@ -1,27 +1,32 @@
 package org.example;
 
 
-// 문제 : 구구단 8단을 출력해주세요. 1000부터 1까지 곱해주세요.
-// 구구단 8단을 출력해주세요. 1000부터 -500까지 곱해주세요.
+/// 문제 : 객체를 사용하지 않고 2번째 플레이어를 만들어주세요.
 
 class Main3 {
     public static void main(String[] args) {
+        플레이어 a플레이어1;
+        a플레이어1 = new 플레이어();
+        a플레이어1.나이 = 20;
+        a플레이어1.이름 = "홍길동";
+        a플레이어1.직업 = "의적";
 
-        int dan = 8;
-        int i = 10;
-
-        while (i >= 1) {
-            System.out.println(dan + " * " + i + " = " + (dan * i));
-            i--;
-        }
-
-        System.out.println("\nfor문\n");
-
-        for (i = 10; i >= 1; i--) {
-            System.out.println(dan + " * " + i + " = " + (dan * i));
-        }
+        플레이어 b플레이어2 = new 플레이어();
+        b플레이어2.sc();
 
 
+    }
+}
+
+class 플레이어 {
+    int 나이;
+    String 이름;
+    String 직업;
+
+   void sc() {
+        System.out.printf("나이 : %d\n" , 30);
+        System.out.printf("이름 : %s\n", "김철수");
+        System.out.printf("직업 : %s", "상인");
     }
 }
 
