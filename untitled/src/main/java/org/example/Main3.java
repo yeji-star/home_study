@@ -1,32 +1,25 @@
 package org.example;
 
-
-/// 문제 : 객체를 사용하지 않고 2번째 플레이어를 만들어주세요.
+// 짝수 판별기
+//소수 검색 가능
+//(약수가 1과 나 자신만 있는 수)
+//2,3,5,7,11,13,17,19
+//소수 구하기 검색 x
+//자바 소수 검색 x
+//%
 
 class Main3 {
     public static void main(String[] args) {
-        플레이어 a플레이어1;
-        a플레이어1 = new 플레이어();
-        a플레이어1.나이 = 20;
-        a플레이어1.이름 = "홍길동";
-        a플레이어1.직업 = "의적";
 
-        플레이어 b플레이어2 = new 플레이어();
-        b플레이어2.sc();
-
+        boolean a;
+        a = num.OddNum(1);
+        System.out.println("소수니 아니니...? : " + a);
 
     }
 }
 
-class 플레이어 {
-    int 나이;
-    String 이름;
-    String 직업;
-
-   void sc() {
-        System.out.printf("나이 : %d\n" , 30);
-        System.out.printf("이름 : %s\n", "김철수");
-        System.out.printf("직업 : %s", "상인");
+class num {
+    static boolean OddNum(int a) {
+        return a % 2 == 0 ;
     }
 }
-
