@@ -1,25 +1,46 @@
 package org.example;
 
-// 짝수 판별기
-//소수 검색 가능
-//(약수가 1과 나 자신만 있는 수)
-//2,3,5,7,11,13,17,19
-//소수 구하기 검색 x
-//자바 소수 검색 x
-//%
+/* 요구사항
+- D4 요구 : 게임의 재미를 위하여 고무오리를 추가하고 날게 하시오.
+*/
 
 class Main3 {
     public static void main(String[] args) {
+        청둥오리 a청둥오리 = new 청둥오리();
+        a청둥오리.날다();
+        // 출력 : 오리가 날개로 날아갑니다.
 
-        boolean a;
-        a = num.OddNum(1);
-        System.out.println("소수니 아니니...? : " + a);
+        흰오리 a흰오리 = new 흰오리();
+        a흰오리.날다();
 
+        고무오리 a고무오리 = new 고무오리();
+        a고무오리.날다();
+
+        고무2오리 a고무2오리 = new 고무2오리();
+        a고무2오리.날다();
     }
 }
 
-class num {
-    static boolean OddNum(int a) {
-        return a % 2 == 0 ;
+class 오리 {
+    void 날다() {
+        System.out.println("오리가 날개로 날아갑니다.");
     }
+}
+
+class 청둥오리 extends 오리 {
+
+}
+
+class 흰오리 extends 오리 {
+
+}
+
+class 고무오리 extends 오리 {
+    void 날다() {
+        System.out.println("저는 날 수 없음...");
+    }
+}
+
+class 고무2오리 extends 오리 {
+
 }
