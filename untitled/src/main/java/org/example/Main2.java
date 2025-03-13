@@ -1,125 +1,68 @@
 package org.example;
 
-// 상황 : DVD방에 3개의 서로다른 tv가 있다.
-// 영업을 하다보니 각 tv의 특별한 기능은 거의 사용될 일이 없고 기본적인 켜기/끄기 만 사용된다.
-// 현재 리모콘이 3개나 있습니다.
-// 문제 : 알바를 편하게 하기 위해서 표준Tv 리모콘을 구현해주세요.
+// 문제 : 아래가 실행되도록 해주세요.
 
 class Main2 {
     public static void main(String[] args) {
-        System.out.println("== 표준Tv 리모콘 들여오기 전 ==");
+        전사2 a전사 = new 전사2();
 
-        샤오미Tv a샤오미Tv = new 샤오미Tv();
-        삼성Tv a삼성Tv = new 삼성Tv();
-        LGTv aLGTv = new LGTv();
+        String 이름 = "칸";
+        a전사.이름 = 이름;
+        a전사.나이 = 20;
+        a전사.자기소개();
 
-        a샤오미Tv.켜기();
-        // 출력 => 샤오미Tv 켜집니다.
-        a샤오미Tv.끄기();
-        // 출력 => 샤오미Tv 꺼집니다.
-        a샤오미Tv.vr켜기();
-        // 출력 => 샤오미Tv vr켜기!
+        a전사.나이++;
+        a전사.자기소개();
 
-        a삼성Tv.켜기();
-        // 출력 => 삼성Tv 켜집니다.
-        a삼성Tv.끄기();
-        // 출력 => 삼성Tv 꺼집니다.
-        a삼성Tv.ar켜기();
-        // 출력 => 삼성Tv ar켜기!
+        a전사.나이 = 30;
+        a전사.이름 = "카니";
+        a전사.자기소개();
 
-        aLGTv.켜기();
-        // 출력 => LGTv 켜집니다.
-        aLGTv.끄기();
-        // 출력 => LGTv 꺼집니다.
-        aLGTv.게임모드전환();
-        // 출력 => LGTv 게임모드전환!
+        a전사.a무기 = new 활();
+        a전사.공격();
+        // 출력 : 카니가 활로 공격합니다.
 
-        System.out.println("== 표준Tv 리모콘 들여온 후 ==");
+        a전사.a무기 = new 칼();
+        a전사.공격();
+        // 출력 : 카니가 칼로 공격합니다.
+    }
+}
 
-        // 표준Tv 리모콘을 만든다.
-        표준Tv a표준Tv;
+class 전사2 {
 
-        // a표준Tv 변수에 샤오미Tv 객체를 연결한다.
-        a표준Tv = a샤오미Tv;
-        a표준Tv.켜기();
-        // 출력 : 샤오기TV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : 샤오기TV 꺼집니다.
+    String 이름;
+    int 나이;
+    무기 a무기;
 
-        // a표준Tv 변수에 삼성Tv 객체를 연결한다.
-        a표준Tv = a삼성Tv;
-        a표준Tv.켜기();
-        // 출력 : 삼성TV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : 삼성TV 꺼집니다.
-        삼성Tv aLGTv2 = (삼성Tv) a표준Tv;
-        aLGTv2.ar켜기();
+    void 자기소개() {
+        System.out.println("안녕하세요. 저는 " + this.나이 + "살 " + this.이름 + " 입니다.");
+    }
 
-        // a표준Tv 변수에 LGTv 객체를 연결한다.
-        a표준Tv = aLGTv;
-        a표준Tv.켜기();
-        // 출력 : LGTV 켜집니다.
-        a표준Tv.끄기();
-        // 출력 : LGTV 꺼집니다.
-
-        // LGTV만의 고유 기능을 표준Tv 리모콘을 이용해서 호출하기 => 불가능
-        // (LGTv) => a표준Tv 변수에 있던 표준Tv 리모콘이 LGTv리모콘화 해서 `aLGTv2` 변수에 들어간다.
-        //위치 영향도 받음
-
-//        LGTv aLGTv2 = (LGTv)a표준Tv;
-//        aLGTv2.게임모드전환();
+    void 공격() {
+        a무기.공격(this.이름);
 
     }
 }
 
-class 표준Tv {
-    void 켜기() {
+class 무기 {
 
-    }
-
-    void 끄기() {
+    void 공격(String 전사이름) {
 
     }
 }
 
-class 샤오미Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("샤오미Tv 켜집니다.");
-    }
+class 칼 extends 무기 {
+    void 공격(String 전사이름) {
 
-    void 끄기() {
-        System.out.println("샤오미Tv 꺼집니다.");
-    }
+        System.out.println(전사이름 + "가 칼로 공격합니다.");
 
-    void vr켜기() {
-        System.out.println("샤오미Tv vr켜기!");
     }
 }
 
-class 삼성Tv extends 표준Tv {
-    void 켜기() {
-        System.out.println("삼성Tv 켜집니다.");
-    }
+class 활 extends 무기 {
+    void 공격(String 전사이름) {
 
-    void 끄기() {
-        System.out.println("삼성Tv 꺼집니다.");
-    }
+        System.out.println(전사이름 + "가 활로 공격합니다.");
 
-    void ar켜기() {
-        System.out.println("삼성Tv ar켜기!");
-    }
-}
-
-class LGTv extends 표준Tv {
-    void 켜기() {
-        System.out.println("LGTv 켜집니다.");
-    }
-
-    void 끄기() {
-        System.out.println("LGTv 꺼집니다.");
-    }
-
-    void 게임모드전환() {
-        System.out.println("LGTv 게임모드전환!");
     }
 }
