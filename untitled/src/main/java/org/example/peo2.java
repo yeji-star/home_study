@@ -1,9 +1,13 @@
 package org.example;
 
-// 문제 : 아래가 실행되도록 해주세요.
-// 조건 : 배열을 사용할 수 없습니다.
+// 문제 변수 활용 버전
 
-class Main {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class peo2 {
     public static void main(String[] args) {
         사람인력관리소 a사람인력관리소 = new 사람인력관리소();
 
@@ -29,34 +33,44 @@ class Main {
 }
 
 class 사람인력관리소 {
-    사람 a처음사람;
-    int 추가번호;
+    //사람[] 사람들 = new 사람[10]; - 배열활용
+    // List<사람> 사람들 = new ArrayList<>(); - ArrayList 활용
+    Map 사람들 = new HashMap<>();
 
+    int 숫자추가 = 0;
 
     void add사람(String 이름, int 나이) {
+
+        int 번호 = 숫자추가 + 1;
+
         사람 a사람 = new 사람();
-        a사람.번호 = 추가번호 + 1;
         a사람.이름 = 이름;
         a사람.나이 = 나이;
+        a사람.번호 = 번호;
 
-        System.out.println("나이가 " + a사람.나이 + "살인 " + a사람.번호 + "번째 사람(" + a사람.이름 + ")이 추가되었습니다.");
+        //사람들[번호 - 1] = a사람; - 배열활용
+        //  사람들.add(a사람); - ArrayList 활용
+        사람들.put(번호, a사람);
 
-        a처음사람 = a사람;
-        this.추가번호 = a사람.번호;
+        System.out.printf("나이가 %d살인 %d번째 사람(%s)이 추가되었습니다.\n", a사람.나이, a사람.번호, a사람.이름);
+        숫자추가++;
+
     }
 
     사람 get사람(int 번호) {
-        return a처음사람;
 
+        //return 사람들[번호 - 1]; - 배열활용
+        // return 사람들.get(번호 - 1); - ArrayList 활용
+        return (사람) 사람들.get(번호);
     }
 }
 
-class 사람 {
-    int 번호;
-    int 나이;
+class 사람 extends 사람인력관리소 {
     String 이름;
+    int 나이;
+    int 번호;
 
     void 자기소개() {
-        System.out.println("저는 " + 번호 + "번, " + 이름 + ", " + 나이 + "살 입니다.");
+        System.out.printf("저는 %d번, %s, %d살 입니다.\n", 번호, 이름, 나이);
     }
 }
